@@ -1,5 +1,6 @@
-package br.com.ifspcmp.mappedwallet;
+package br.com.ifspcmp.mappedwallet.ui.main;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -21,16 +22,32 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
 
+import br.com.ifspcmp.mappedwallet.globals.Usuario;
+import br.com.ifspcmp.mappedwallet.R;
+import br.com.ifspcmp.mappedwallet.ui.SplashScreen;
+import br.com.ifspcmp.mappedwallet.ui.login.LoginActivity;
+
 public class MainActivity extends AppCompatActivity {
 
+
+    //Components
     private AppBarConfiguration mAppBarConfiguration;
     private Toolbar barraDeFerramentas;
     private FloatingActionButton botaoAdd;
     private DrawerLayout menuDrawer;
     private NavigationView navigationView;
 
+    //Globals
+    private Usuario usuario;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        //Inicia a tela de carregamento
+        Intent splashScreen = new Intent(MainActivity.this, SplashScreen.class);
+        splashScreen.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+        startActivity(splashScreen);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -50,6 +67,31 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+    }
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        //Verifica se usuário está logado e não está carregando
+        usuario = Usuario.getInstance();
+        if(!usuario.getIsIsLogged() && usuario.getIsFinishLoading()){
+            //Se não estiver logado, redireciona para a tela de login
+            Intent login = new Intent(MainActivity.this, LoginActivity.class);
+            login.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+            startActivity(login);
+        }
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        if(!usuario.getIsIsLogged() && usuario.getIsFinishLoading()){
+            //Se não estiver logado, redireciona para a tela de login
+            Intent login = new Intent(MainActivity.this, LoginActivity.class);
+            login.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+            startActivity(login);
+        }
     }
 
     @Override
