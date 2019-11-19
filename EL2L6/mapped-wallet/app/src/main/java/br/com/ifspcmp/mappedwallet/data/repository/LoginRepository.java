@@ -1,5 +1,7 @@
-package br.com.ifspcmp.mappedwallet.data;
+package br.com.ifspcmp.mappedwallet.data.repository;
 
+import br.com.ifspcmp.mappedwallet.data.LoginDataSource;
+import br.com.ifspcmp.mappedwallet.data.Result;
 import br.com.ifspcmp.mappedwallet.data.model.LoggedInUser;
 
 /**

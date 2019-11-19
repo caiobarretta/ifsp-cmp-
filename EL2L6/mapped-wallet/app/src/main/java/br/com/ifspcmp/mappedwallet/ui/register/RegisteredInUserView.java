@@ -1,13 +1,10 @@
 package br.com.ifspcmp.mappedwallet.ui.register;
 
-/**
- * Class exposing authenticated user details to the UI.
- */
-class RegistredInUserView {
+public class RegisteredInUserView {
     private String displayName;
     //... other data fields that may be accessible to the UI
 
-    RegistredInUserView(String displayName) {
+    RegisteredInUserView(String displayName) {
         this.displayName = displayName;
     }
 

@@ -1,15 +1,15 @@
 package br.com.ifspcmp.mappedwallet.ui.register;
 
+import android.util.Patterns;
+
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import android.util.Patterns;
-
-import br.com.ifspcmp.mappedwallet.data.RegisterRepository;
-import br.com.ifspcmp.mappedwallet.data.model.RegistedInUser;
-import br.com.ifspcmp.mappedwallet.data.Result;
 import br.com.ifspcmp.mappedwallet.R;
+import br.com.ifspcmp.mappedwallet.data.repository.RegisterRepository;
+import br.com.ifspcmp.mappedwallet.data.Result;
+import br.com.ifspcmp.mappedwallet.data.model.RegisteredInUser;
 
 public class RegisterViewModel extends ViewModel {
 
@@ -31,11 +31,11 @@ public class RegisterViewModel extends ViewModel {
 
     public void register(String username, String password) {
         // can be launched in a separate asynchronous job
-        Result<RegistedInUser> result = registerRepository.register(username, password);
+        Result<RegisteredInUser> result = registerRepository.register(username, password);
 
         if (result instanceof Result.Success) {
-            RegistedInUser data = ((Result.Success<RegistedInUser>) result).getData();
-            registerResult.setValue(new RegisterResult(new RegistredInUserView(data.getDisplayName())));
+            RegisteredInUserView data = ((Result.Success<RegisteredInUserView>) result).getData();
+            registerResult.setValue(new RegisterResult(new RegisteredInUserView(data.getDisplayName())));
         } else {
             registerResult.setValue(new RegisterResult(R.string.register_failed));
         }
@@ -67,4 +67,5 @@ public class RegisterViewModel extends ViewModel {
     private boolean isPasswordValid(String password) {
         return password != null && password.trim().length() > 5;
     }
+
 }

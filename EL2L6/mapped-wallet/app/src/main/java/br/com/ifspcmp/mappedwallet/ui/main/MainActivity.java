@@ -21,6 +21,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.Spinner;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import br.com.ifspcmp.mappedwallet.globals.Usuario;
 import br.com.ifspcmp.mappedwallet.R;
@@ -59,8 +66,8 @@ public class MainActivity extends AppCompatActivity {
         navigationView = findViewById(R.id.nav_view);
 
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow,
-                R.id.nav_tools, R.id.nav_share, R.id.nav_send)
+                R.id.nav_lancamentos, R.id.nav_relatorios, R.id.nav_gerenciar_circulo,
+                R.id.nav_entrar_circulo, R.id.nav_configuracoes, R.id.nav_sobre)
                 .setDrawerLayout(menuDrawer)
                 .build();
 
@@ -98,7 +105,31 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
+
+        ((Spinner)menu.findItem(R.id.main_menu_spinner_contas).getActionView()).setAdapter(CarregaContas());
+
+        Button btnAddAccount = (Button)menu.findItem(R.id.main_menu_button_add_account).getActionView();
+        Button btnNotification = (Button)menu.findItem(R.id.main_menu_button_notification).getActionView();
+
+        btnAddAccount.setLayoutParams(new LinearLayout.LayoutParams(64, 64));
+        btnNotification.setLayoutParams(new LinearLayout.LayoutParams(64, 64));
+
+
         return true;
+    }
+
+    private ArrayAdapter<String> CarregaContas() {
+        List<String> list = new ArrayList<String>();
+        list.add("Conta 1");
+        list.add("Conta 2");
+        list.add("Conta 3");
+        list.add("Conta 4");
+        //create an ArrayAdaptar from the String Array
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item, list);
+        //set the view for the Drop down list
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        return dataAdapter;
     }
 
     @Override

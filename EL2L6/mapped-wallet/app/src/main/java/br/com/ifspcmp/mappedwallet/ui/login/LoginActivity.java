@@ -27,6 +27,11 @@ import br.com.ifspcmp.mappedwallet.ui.register.RegisterActivity;
 public class LoginActivity extends AppCompatActivity {
 
     private LoginViewModel loginViewModel;
+    private EditText usernameEditText;
+    private EditText passwordEditText;
+    private Button loginButton;
+    private Button registerButton;
+    private ProgressBar loadingProgressBar;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -35,11 +40,11 @@ public class LoginActivity extends AppCompatActivity {
         loginViewModel = ViewModelProviders.of(this, new LoginViewModelFactory())
                 .get(LoginViewModel.class);
 
-        final EditText usernameEditText = findViewById(R.id.login_username);
-        final EditText passwordEditText = findViewById(R.id.login_password);
-        final Button loginButton = findViewById(R.id.login_btnlogin);
-        final Button registerButton = findViewById(R.id.login_btnregister);
-        final ProgressBar loadingProgressBar = findViewById(R.id.login_loading);
+        usernameEditText = findViewById(R.id.login_username);
+        passwordEditText = findViewById(R.id.login_password);
+        loginButton = findViewById(R.id.login_btnlogin);
+        registerButton = findViewById(R.id.login_btnregister);
+        loadingProgressBar = findViewById(R.id.login_loading);
 
         loginViewModel.getLoginFormState().observe(this, new Observer<LoginFormState>() {
             @Override

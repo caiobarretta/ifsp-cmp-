@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.annotation.NonNull;
 
 import br.com.ifspcmp.mappedwallet.data.LoginDataSource;
-import br.com.ifspcmp.mappedwallet.data.LoginRepository;
+import br.com.ifspcmp.mappedwallet.data.repository.LoginRepository;
 
 /**
  * ViewModel provider factory to instantiate LoginViewModel.

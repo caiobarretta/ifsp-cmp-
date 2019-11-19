@@ -2,10 +2,7 @@ package br.com.ifspcmp.mappedwallet.ui.register;
 
 import androidx.annotation.Nullable;
 
-/**
- * Data validation state of the login form.
- */
-class RegisterFormState {
+public class RegisterFormState {
     @Nullable
     private Integer usernameError;
     @Nullable

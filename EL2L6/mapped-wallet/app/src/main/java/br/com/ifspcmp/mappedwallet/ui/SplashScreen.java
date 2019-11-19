@@ -10,7 +10,6 @@ import android.widget.ProgressBar;
 import br.com.ifspcmp.mappedwallet.R;
 import br.com.ifspcmp.mappedwallet.globals.Usuario;
 import br.com.ifspcmp.mappedwallet.ui.login.LoginActivity;
-import br.com.ifspcmp.mappedwallet.ui.main.MainActivity;
 
 public class SplashScreen extends AppCompatActivity {
 
@@ -62,6 +61,9 @@ public class SplashScreen extends AppCompatActivity {
                     Intent login = new Intent(SplashScreen.this, LoginActivity.class);
                     login.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                     startActivity(login);
+                    //Intent register = new Intent(SplashScreen.this, RegisterActivity.class);
+                    //register.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                    //startActivity(register);
                 }
                 finish();
             }

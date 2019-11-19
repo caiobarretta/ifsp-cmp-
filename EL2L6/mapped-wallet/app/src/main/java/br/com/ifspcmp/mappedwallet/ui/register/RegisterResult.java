@@ -2,12 +2,9 @@ package br.com.ifspcmp.mappedwallet.ui.register;
 
 import androidx.annotation.Nullable;
 
-/**
- * Authentication result : success (user details) or error message.
- */
-class RegisterResult {
+public class RegisterResult {
     @Nullable
-    private RegistredInUserView success;
+    private RegisteredInUserView success;
     @Nullable
     private Integer error;
 
@@ -15,12 +12,12 @@ class RegisterResult {
         this.error = error;
     }
 
-    RegisterResult(@Nullable RegistredInUserView success) {
+    RegisterResult(@Nullable RegisteredInUserView success) {
         this.success = success;
     }
 
     @Nullable
-    RegistredInUserView getSuccess() {
+    RegisteredInUserView getSuccess() {
         return success;
     }
 

@@ -3,41 +3,41 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/nav_lancamentos">
 
     <fragment
-        android:id="@+id/nav_home"
+        android:id="@+id/nav_lancamentos"
         android:name="br.com.ifspcmp.mappedwallet.ui.main.home.HomeFragment"
-        android:label="@string/menu_home"
+        android:label="@string/menu_lancamentos"
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
+        android:id="@+id/nav_relatorios"
         android:name="br.com.ifspcmp.mappedwallet.ui.main.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
+        android:label="@string/menu_relatorios"
         tools:layout="@layout/fragment_gallery" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
+        android:id="@+id/nav_gerenciar_circulo"
         android:name="br.com.ifspcmp.mappedwallet.ui.main.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
+        android:label="@string/menu_gerenciar_circulo"
         tools:layout="@layout/fragment_slideshow" />
 
     <fragment
-        android:id="@+id/nav_tools"
+        android:id="@+id/nav_entrar_circulo"
         android:name="br.com.ifspcmp.mappedwallet.ui.main.tools.ToolsFragment"
-        android:label="@string/menu_tools"
+        android:label="@string/menu_entrar_circulo"
         tools:layout="@layout/fragment_tools" />
 
     <fragment
-        android:id="@+id/nav_share"
+        android:id="@+id/nav_configuracoes"
         android:name="br.com.ifspcmp.mappedwallet.ui.main.share.ShareFragment"
-        android:label="@string/menu_share"
+        android:label="@string/menu_configuracoes"
         tools:layout="@layout/fragment_share" />
 
     <fragment
-        android:id="@+id/nav_send"
+        android:id="@+id/nav_sobre"
         android:name="br.com.ifspcmp.mappedwallet.ui.main.send.SendFragment"
-        android:label="@string/menu_send"
+        android:label="@string/menu_sobre"
         tools:layout="@layout/fragment_send" />
 </navigation>

@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel;
 import android.util.Patterns;
 
 import br.com.ifspcmp.mappedwallet.R;
-import br.com.ifspcmp.mappedwallet.data.LoginRepository;
+import br.com.ifspcmp.mappedwallet.data.repository.LoginRepository;
 import br.com.ifspcmp.mappedwallet.data.Result;
 import br.com.ifspcmp.mappedwallet.data.model.LoggedInUser;
 

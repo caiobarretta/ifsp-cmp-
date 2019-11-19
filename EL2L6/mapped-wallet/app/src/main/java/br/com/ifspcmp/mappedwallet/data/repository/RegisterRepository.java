@@ -1,12 +1,9 @@
-package br.com.ifspcmp.mappedwallet.data;
+package br.com.ifspcmp.mappedwallet.data.repository;
 
-import br.com.ifspcmp.mappedwallet.data.model.RegistedInUser;
-import br.com.ifspcmp.mappedwallet.data.model.LoggedInUser;
+import br.com.ifspcmp.mappedwallet.data.RegisterDataSource;
+import br.com.ifspcmp.mappedwallet.data.Result;
+import br.com.ifspcmp.mappedwallet.data.model.RegisteredInUser;
 
-/**
- * Class that requests authentication and user information from the remote data source and
- * maintains an in-memory cache of login status and user credentials information.
- */
 public class RegisterRepository {
 
     private static volatile RegisterRepository instance;
@@ -15,7 +12,7 @@ public class RegisterRepository {
 
     // If user credentials will be cached in local storage, it is recommended it be encrypted
     // @see https://developer.android.com/training/articles/keystore
-    private RegistedInUser user = null;
+    private RegisteredInUser user = null;
 
     // private constructor : singleton access
     private RegisterRepository(RegisterDataSource dataSource) {
@@ -38,17 +35,17 @@ public class RegisterRepository {
         dataSource.logout();
     }
 
-    private void setLoggedInUser(RegistedInUser user) {
+    private void setRegisteredInUser(RegisteredInUser user) {
         this.user = user;
         // If user credentials will be cached in local storage, it is recommended it be encrypted
         // @see https://developer.android.com/training/articles/keystore
     }
 
-    public Result<RegistedInUser> register(String username, String password) {
+    public Result<RegisteredInUser> register(String username, String password) {
         // handle login
-        Result<RegistedInUser> result = dataSource.login(username, password);
+        Result<RegisteredInUser> result = dataSource.login(username, password);
         if (result instanceof Result.Success) {
-            setLoggedInUser(((Result.Success<RegistedInUser>) result).getData());
+            setRegisteredInUser(((Result.Success<RegisteredInUser>) result).getData());
         }
         return result;
     }

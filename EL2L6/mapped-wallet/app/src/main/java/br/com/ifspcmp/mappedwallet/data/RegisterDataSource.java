@@ -1,19 +1,17 @@
 package br.com.ifspcmp.mappedwallet.data;
 
-import br.com.ifspcmp.mappedwallet.data.model.RegistedInUser;
 import java.io.IOException;
 
-/**
- * Class that handles authentication w/ login credentials and retrieves user information.
- */
+import br.com.ifspcmp.mappedwallet.data.model.RegisteredInUser;
+
 public class RegisterDataSource {
 
-    public Result<RegistedInUser> login(String username, String password) {
+    public Result<RegisteredInUser> login(String username, String password) {
 
         try {
             // TODO: handle loggedInUser authentication
-            RegistedInUser fakeUser =
-                    new RegistedInUser(
+            RegisteredInUser fakeUser =
+                    new RegisteredInUser(
                             java.util.UUID.randomUUID().toString(),
                             "Jane Doe");
             return new Result.Success<>(fakeUser);
