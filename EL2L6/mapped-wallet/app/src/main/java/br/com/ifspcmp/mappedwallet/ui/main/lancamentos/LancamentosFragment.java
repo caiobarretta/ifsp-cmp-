@@ -1,4 +1,4 @@
-package br.com.ifspcmp.mappedwallet.ui.main.send;
+package br.com.ifspcmp.mappedwallet.ui.main.lancamentos;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProviders;
 
 import br.com.ifspcmp.mappedwallet.R;
 
-public class SendFragment extends Fragment {
+public class LancamentosFragment extends Fragment {
 
-    private SendViewModel sendViewModel;
+    private LancamentosViewModel lancamentosViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        sendViewModel =
-                ViewModelProviders.of(this).get(SendViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_send, container, false);
-        final TextView textView = root.findViewById(R.id.text_send);
-        sendViewModel.getText().observe(this, new Observer<String>() {
+        lancamentosViewModel =
+                ViewModelProviders.of(this).get(LancamentosViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_relatorios, container, false);
+        final TextView textView = root.findViewById(R.id.text_gallery);
+        lancamentosViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

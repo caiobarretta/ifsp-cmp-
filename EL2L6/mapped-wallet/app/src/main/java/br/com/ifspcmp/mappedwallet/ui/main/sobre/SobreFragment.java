@@ -1,4 +1,4 @@
-package br.com.ifspcmp.mappedwallet.ui.main.slideshow;
+package br.com.ifspcmp.mappedwallet.ui.main.sobre;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProviders;
 
 import br.com.ifspcmp.mappedwallet.R;
 
-public class SlideshowFragment extends Fragment {
+public class SobreFragment extends Fragment {
 
-    private SlideshowViewModel slideshowViewModel;
+    private SobreViewModel sobreViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        slideshowViewModel =
-                ViewModelProviders.of(this).get(SlideshowViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_slideshow, container, false);
-        final TextView textView = root.findViewById(R.id.text_slideshow);
-        slideshowViewModel.getText().observe(this, new Observer<String>() {
+        sobreViewModel =
+                ViewModelProviders.of(this).get(SobreViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_sobre, container, false);
+        final TextView textView = root.findViewById(R.id.text_send);
+        sobreViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

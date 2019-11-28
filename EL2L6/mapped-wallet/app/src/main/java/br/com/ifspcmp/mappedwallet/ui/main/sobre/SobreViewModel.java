@@ -1,16 +1,16 @@
-package br.com.ifspcmp.mappedwallet.ui.main.slideshow;
+package br.com.ifspcmp.mappedwallet.ui.main.sobre;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class SlideshowViewModel extends ViewModel {
+public class SobreViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public SlideshowViewModel() {
+    public SobreViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is slideshow fragment");
+        mText.setValue("This is send fragment");
     }
 
     public LiveData<String> getText() {

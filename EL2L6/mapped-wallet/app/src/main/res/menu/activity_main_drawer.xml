@@ -7,13 +7,13 @@
         <item android:title="Administrativo">
             <menu>
                 <item
+                    android:id="@+id/nav_home"
+                    android:icon="@drawable/ic_menu_home"
+                    android:title="@string/menu_home" />
+                <item
                     android:id="@+id/nav_lancamentos"
                     android:icon="@drawable/ic_menu_lancamentos"
                     android:title="@string/menu_lancamentos" />
-                <item
-                    android:id="@+id/nav_relatorios"
-                    android:icon="@drawable/ic_menu_relatorios"
-                    android:title="@string/menu_relatorios" />
             </menu>
         </item>
         <item android:title="Círculos">

@@ -3,41 +3,41 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_lancamentos">
+    app:startDestination="@+id/nav_home">
 
     <fragment
-        android:id="@+id/nav_lancamentos"
+        android:id="@+id/nav_home"
         android:name="br.com.ifspcmp.mappedwallet.ui.main.home.HomeFragment"
-        android:label="@string/menu_lancamentos"
+        android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_relatorios"
-        android:name="br.com.ifspcmp.mappedwallet.ui.main.gallery.GalleryFragment"
-        android:label="@string/menu_relatorios"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_lancamentos"
+        android:name="br.com.ifspcmp.mappedwallet.ui.main.lancamentos.LancamentosFragment"
+        android:label="@string/menu_lancamentos"
+        tools:layout="@layout/fragment_relatorios" />
 
     <fragment
         android:id="@+id/nav_gerenciar_circulo"
-        android:name="br.com.ifspcmp.mappedwallet.ui.main.slideshow.SlideshowFragment"
+        android:name="br.com.ifspcmp.mappedwallet.ui.main.gereneciarcirculo.GereneciarCirculoFragment"
         android:label="@string/menu_gerenciar_circulo"
-        tools:layout="@layout/fragment_slideshow" />
+        tools:layout="@layout/fragment_gereneciarcirculo" />
 
     <fragment
         android:id="@+id/nav_entrar_circulo"
-        android:name="br.com.ifspcmp.mappedwallet.ui.main.tools.ToolsFragment"
+        android:name="br.com.ifspcmp.mappedwallet.ui.main.entrarcirculo.EntrarCirculoFragment"
         android:label="@string/menu_entrar_circulo"
-        tools:layout="@layout/fragment_tools" />
+        tools:layout="@layout/fragment_entrarcirculo" />
 
     <fragment
         android:id="@+id/nav_configuracoes"
-        android:name="br.com.ifspcmp.mappedwallet.ui.main.share.ShareFragment"
+        android:name="br.com.ifspcmp.mappedwallet.ui.main.configuracoes.ConfiguracoesFragment"
         android:label="@string/menu_configuracoes"
-        tools:layout="@layout/fragment_share" />
+        tools:layout="@layout/fragment_configuracoes" />
 
     <fragment
         android:id="@+id/nav_sobre"
-        android:name="br.com.ifspcmp.mappedwallet.ui.main.send.SendFragment"
+        android:name="br.com.ifspcmp.mappedwallet.ui.main.sobre.SobreFragment"
         android:label="@string/menu_sobre"
-        tools:layout="@layout/fragment_send" />
+        tools:layout="@layout/fragment_sobre" />
 </navigation>

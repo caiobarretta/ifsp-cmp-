@@ -1,4 +1,4 @@
-package br.com.ifspcmp.mappedwallet.ui.main.tools;
+package br.com.ifspcmp.mappedwallet.ui.main.configuracoes;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProviders;
 
 import br.com.ifspcmp.mappedwallet.R;
 
-public class ToolsFragment extends Fragment {
+public class ConfiguracoesFragment extends Fragment {
 
-    private ToolsViewModel toolsViewModel;
+    private ConfiguracoesViewModel configuracoesViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        toolsViewModel =
-                ViewModelProviders.of(this).get(ToolsViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_tools, container, false);
-        final TextView textView = root.findViewById(R.id.text_tools);
-        toolsViewModel.getText().observe(this, new Observer<String>() {
+        configuracoesViewModel =
+                ViewModelProviders.of(this).get(ConfiguracoesViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_configuracoes, container, false);
+        final TextView textView = root.findViewById(R.id.text_share);
+        configuracoesViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

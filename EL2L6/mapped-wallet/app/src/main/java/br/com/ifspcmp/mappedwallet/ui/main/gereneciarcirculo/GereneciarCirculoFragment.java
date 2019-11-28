@@ -1,4 +1,4 @@
-package br.com.ifspcmp.mappedwallet.ui.main.share;
+package br.com.ifspcmp.mappedwallet.ui.main.gereneciarcirculo;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProviders;
 
 import br.com.ifspcmp.mappedwallet.R;
 
-public class ShareFragment extends Fragment {
+public class GereneciarCirculoFragment extends Fragment {
 
-    private ShareViewModel shareViewModel;
+    private GereneciarCirculoViewModel gereneciarCirculoViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        shareViewModel =
-                ViewModelProviders.of(this).get(ShareViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_share, container, false);
-        final TextView textView = root.findViewById(R.id.text_share);
-        shareViewModel.getText().observe(this, new Observer<String>() {
+        gereneciarCirculoViewModel =
+                ViewModelProviders.of(this).get(GereneciarCirculoViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_gereneciarcirculo, container, false);
+        final TextView textView = root.findViewById(R.id.text_slideshow);
+        gereneciarCirculoViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

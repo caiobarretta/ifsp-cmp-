@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
         navigationView = findViewById(R.id.nav_view);
 
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_lancamentos, R.id.nav_relatorios, R.id.nav_gerenciar_circulo,
+                R.id.nav_home, R.id.nav_lancamentos, R.id.nav_gerenciar_circulo,
                 R.id.nav_entrar_circulo, R.id.nav_configuracoes, R.id.nav_sobre)
                 .setDrawerLayout(menuDrawer)
                 .build();

@@ -1,14 +1,14 @@
-package br.com.ifspcmp.mappedwallet.ui.main.tools;
+package br.com.ifspcmp.mappedwallet.ui.main.entrarcirculo;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class ToolsViewModel extends ViewModel {
+public class EntrarCirculoViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public ToolsViewModel() {
+    public EntrarCirculoViewModel() {
         mText = new MutableLiveData<>();
         mText.setValue("This is tools fragment");
     }
