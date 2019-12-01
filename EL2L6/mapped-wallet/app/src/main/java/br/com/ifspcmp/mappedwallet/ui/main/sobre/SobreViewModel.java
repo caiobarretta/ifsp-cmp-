@@ -10,7 +10,7 @@ public class SobreViewModel extends ViewModel {
 
     public SobreViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is send fragment");
+        mText.setValue("This is sobre fragment");
     }
 
     public LiveData<String> getText() {

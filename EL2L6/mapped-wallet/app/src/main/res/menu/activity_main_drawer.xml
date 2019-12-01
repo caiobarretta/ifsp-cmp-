@@ -16,7 +16,7 @@
                     android:title="@string/menu_lancamentos" />
             </menu>
         </item>
-        <item android:title="Círculos">
+        <!--item android:title="Círculos">
             <menu>
                 <item
                     android:id="@+id/nav_gerenciar_circulo"
@@ -27,13 +27,13 @@
                     android:icon="@drawable/ic_menu_entrar_circulo"
                     android:title="@string/menu_entrar_circulo" />
             </menu>
-        </item>
+        </item-->
         <item android:title="Aplicação">
             <menu>
-                <item
+                <!--item
                     android:id="@+id/nav_configuracoes"
                     android:icon="@drawable/ic_menu_configuracoes"
-                    android:title="@string/menu_configuracoes" />
+                    android:title="@string/menu_configuracoes" /-->
                 <item
                     android:id="@+id/nav_sobre"
                     android:icon="@drawable/ic_menu_sobre"

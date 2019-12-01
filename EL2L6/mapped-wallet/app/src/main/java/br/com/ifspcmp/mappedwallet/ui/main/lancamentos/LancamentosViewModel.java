@@ -4,16 +4,21 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import br.com.ifspcmp.mappedwallet.helper.DataHelper;
+
 public class LancamentosViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
     public LancamentosViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is gallery fragment");
+
+        String mesAtual = DataHelper.GetMesEmPortugues();
+        mText.setValue(mesAtual);
     }
 
     public LiveData<String> getText() {
         return mText;
     }
+
 }

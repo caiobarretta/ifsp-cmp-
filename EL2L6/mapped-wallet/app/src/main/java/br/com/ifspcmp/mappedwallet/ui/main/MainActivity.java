@@ -22,9 +22,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.Spinner;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,6 +42,9 @@ public class MainActivity extends AppCompatActivity {
     private DrawerLayout menuDrawer;
     private NavigationView navigationView;
 
+    private TextView lancamento_txt;
+    private int mesAtual = 0;
+
     //Globals
     private Usuario usuario;
 
@@ -61,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         barraDeFerramentas = findViewById(R.id.toolbar);
         setSupportActionBar(barraDeFerramentas);
 
-        botaoAdd = findViewById(R.id.fab);
+        //botaoAdd = findViewById(R.id.fab);
         menuDrawer = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
 
@@ -74,6 +75,9 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+
+        lancamento_txt = findViewById(R.id.lancamento_txt_mes);
     }
 
 
@@ -106,13 +110,13 @@ public class MainActivity extends AppCompatActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
 
-        ((Spinner)menu.findItem(R.id.main_menu_spinner_contas).getActionView()).setAdapter(CarregaContas());
+        //((Spinner)menu.findItem(R.id.main_menu_spinner_contas).getActionView()).setAdapter(CarregaContas());
 
-        Button btnAddAccount = (Button)menu.findItem(R.id.main_menu_button_add_account).getActionView();
-        Button btnNotification = (Button)menu.findItem(R.id.main_menu_button_notification).getActionView();
+        //Button btnAddAccount = (Button)menu.findItem(R.id.main_menu_button_add_account).getActionView();
+        //Button btnNotification = (Button)menu.findItem(R.id.main_menu_button_notification).getActionView();
 
-        btnAddAccount.setLayoutParams(new LinearLayout.LayoutParams(64, 64));
-        btnNotification.setLayoutParams(new LinearLayout.LayoutParams(64, 64));
+        //btnAddAccount.setLayoutParams(new LinearLayout.LayoutParams(64, 64));
+        //btnNotification.setLayoutParams(new LinearLayout.LayoutParams(64, 64));
 
 
         return true;
@@ -144,4 +148,6 @@ public class MainActivity extends AppCompatActivity {
         Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show();
     }
+
+
 }

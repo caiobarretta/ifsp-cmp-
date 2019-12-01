@@ -3,12 +3,13 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item
+    <!--item
         android:id="@+id/main_menu_spinner_contas"
         android:title="ActionBar Spinner"
         app:actionViewClass="android.widget.Spinner"
-        app:showAsAction="always" />
+        app:showAsAction="always" /-->
 
+    <!--
     <item
         android:id="@+id/main_menu_button_add_account"
         android:icon="@drawable/ic_add_user"
@@ -22,5 +23,6 @@
         android:title="notification"
         app:actionViewClass="android.widget.Button"
         app:showAsAction="always" />
+    -->
 
 </menu>
