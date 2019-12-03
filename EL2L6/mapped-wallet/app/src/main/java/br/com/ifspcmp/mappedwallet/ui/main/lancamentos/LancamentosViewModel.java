@@ -14,7 +14,8 @@ public class LancamentosViewModel extends ViewModel {
         mText = new MutableLiveData<>();
 
         String mesAtual = DataHelper.GetMesEmPortugues();
-        mText.setValue(mesAtual);
+        int anoAtual = DataHelper.RetornaAnoAtual();
+        mText.setValue(mesAtual + "/" + anoAtual);
     }
 
     public LiveData<String> getText() {

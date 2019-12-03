@@ -1,6 +1,7 @@
 package br.com.ifspcmp.mappedwallet.data.adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -49,8 +50,7 @@ public class LancamentoAdapter extends BaseAdapter {
         if (view == null) view = inflater.inflate(R.layout.list_lancamento, parent, false);
 
         TextView list_lancamento_data_pagamento = view.findViewById(R.id.list_lancamento_data_pagamento);
-        list_lancamento_data_pagamento.setText(new SimpleDateFormat("dd/MM/yyyy")
-                .format(lancamento.getDataPagamento()));
+        list_lancamento_data_pagamento.setText(lancamento.getDataPagamento());
 
         TextView list_lancamento_descricao = view.findViewById(R.id.list_lancamento_descricao);
         list_lancamento_descricao.setText(lancamento.getDescricao());

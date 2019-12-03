@@ -1,5 +1,7 @@
 package br.com.ifspcmp.mappedwallet.helper;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -65,5 +67,42 @@ public class DataHelper {
         GregorianCalendar dataCal = new GregorianCalendar();
         dataCal.setTime(data);
         return dataCal.get(Calendar.MONTH);
+    }
+
+    public static  int RetonarMesData(Date date){
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(date);
+        return cal.get(Calendar.MONTH);
+    }
+
+    public static  int RetonarAnoData(Date date){
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(date);
+        return cal.get(Calendar.YEAR);
+    }
+
+    public static int RetornaMaximoDiaMesAtual(){
+        Date data = new Date();
+        GregorianCalendar dataCal = new GregorianCalendar();
+        dataCal.setTime(data);
+        return dataCal.getActualMaximum(Calendar.DAY_OF_MONTH);
+    }
+
+    public static int RetornaMaximoDiaMes(int mes, int ano){
+        Date data = new Date(ano, mes, 1);
+        GregorianCalendar dataCal = new GregorianCalendar();
+        dataCal.setTime(data);
+        return dataCal.getActualMaximum(Calendar.DAY_OF_MONTH);
+    }
+
+    public static int RetornaAnoAtual(){
+        Date data = new Date();
+        GregorianCalendar dataCal = new GregorianCalendar();
+        dataCal.setTime(data);
+        return dataCal.get(Calendar.YEAR);
+    }
+
+    public static Date ConvertStringEmData(String strData) throws ParseException {
+        return new SimpleDateFormat("yyyy/MM/dd").parse(strData);
     }
 }

@@ -2,17 +2,23 @@ package br.com.ifspcmp.mappedwallet.data.model;
 
 import com.google.android.gms.maps.model.LatLng;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
 import br.com.ifspcmp.mappedwallet.data.enumerador.TipoLancamento;
 
-public class Lancamento {
+public class Lancamento implements Serializable {
+
     private Long id;
     private String descricao;
-    private Date dataPagamento;
+    private String dataPagamento;
     private BigDecimal valor;
-    private LatLng latLngLocal;
+
+    private double lat;
+    private double lng;
+    private transient LatLng latLngLocal;
+
     private TipoLancamento tipoLancamento;
 
     public Long getId() {
@@ -31,11 +37,11 @@ public class Lancamento {
         this.descricao = descricao;
     }
 
-    public Date getDataPagamento() {
+    public String getDataPagamento() {
         return dataPagamento;
     }
 
-    public void setDataPagamento(Date dataPagamento) {
+    public void setDataPagamento(String dataPagamento) {
         this.dataPagamento = dataPagamento;
     }
 
@@ -48,10 +54,15 @@ public class Lancamento {
     }
 
     public LatLng getLatLngLocal() {
-        return latLngLocal;
+        if(latLngLocal == null)
+            return new LatLng(this.lat, this.lng);
+        else
+            return latLngLocal;
     }
 
     public void setLatLngLocal(LatLng latLngLocal) {
+        this.lat = latLngLocal.latitude;
+        this.lng = latLngLocal.longitude;
         this.latLngLocal = latLngLocal;
     }
 

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.main.lancamentos.LancamentoActivity">
+
+    <EditText
+        android:id="@+id/lancamento_txt_datapagamento"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:enabled="false"
+        android:gravity="center"
+        android:hint="DATA PAGAMENTO"
+        android:inputType="date"
+        app:layout_constraintEnd_toStartOf="@+id/lancamento_btn_datapickerdialog"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/lancamento_txt_descricao"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="DESCRIÇÃO"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/lancamento_txt_datapagamento"
+        app:layout_constraintTop_toBottomOf="@+id/lancamento_txt_datapagamento" />
+
+    <EditText
+        android:id="@+id/lancamento_txt_latitude"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:enabled="false"
+        android:gravity="center"
+        android:hint="LATITUDE"
+        android:inputType="textPersonName"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toStartOf="@+id/lancamento_txt_longitude"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/lancamento_txt_descricao"
+        app:layout_constraintTop_toBottomOf="@+id/lancamento_txt_descricao" />
+
+    <EditText
+        android:id="@+id/lancamento_txt_longitude"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:enabled="false"
+        android:gravity="center"
+        android:hint="LONGITUDE"
+        android:inputType="textPersonName"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@+id/lancamento_txt_descricao"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/lancamento_txt_latitude"
+        app:layout_constraintTop_toBottomOf="@+id/lancamento_txt_descricao" />
+
+    <EditText
+        android:id="@+id/lancamento_txt_valor"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="VALOR"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="@+id/lancamento_txt_longitude"
+        app:layout_constraintStart_toStartOf="@+id/lancamento_txt_descricao"
+        app:layout_constraintTop_toBottomOf="@+id/lancamento_txt_descricao" />
+
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/lancamento_mapview"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lancamento_txt_valor" />
+
+    <Button
+        android:id="@+id/lancamento_btn_datapickerdialog"
+        android:layout_width="45dp"
+        android:layout_height="39dp"
+        android:background="@drawable/ic_common_calendar"
+        android:onClick="onClickLancamentoBtnDataPickerDialog"
+        app:layout_constraintBottom_toBottomOf="@+id/lancamento_txt_datapagamento"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/lancamento_txt_datapagamento"
+        app:layout_constraintTop_toTopOf="@+id/lancamento_txt_datapagamento"
+        app:layout_constraintVertical_bias="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

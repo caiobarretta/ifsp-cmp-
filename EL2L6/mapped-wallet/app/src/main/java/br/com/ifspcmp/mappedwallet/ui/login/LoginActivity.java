@@ -21,6 +21,10 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 import br.com.ifspcmp.mappedwallet.R;
 import br.com.ifspcmp.mappedwallet.ui.register.RegisterActivity;
 
@@ -64,13 +68,19 @@ public class LoginActivity extends AppCompatActivity {
 
         loginViewModel.getLoginResult().observe(this, new Observer<LoginResult>() {
             @Override
-            public void onChanged(@Nullable LoginResult loginResult) {
-                if (loginResult == null) {
+            public void onChanged(@Nullable final LoginResult loginResult) {
+                if (loginResult == null){
+                    loginButton.setEnabled(true);
+                    registerButton.setEnabled(true);
                     return;
                 }
+
                 loadingProgressBar.setVisibility(View.GONE);
                 if (loginResult.getError() != null) {
                     showLoginFailed(loginResult.getError());
+                    loginButton.setEnabled(true);
+                    registerButton.setEnabled(true);
+                    return;
                 }
                 if (loginResult.getSuccess() != null) {
                     updateUiWithUser(loginResult.getSuccess());
@@ -79,6 +89,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 //Complete and destroy login activity once successful
                 finish();
+
             }
         });
 
@@ -116,9 +127,13 @@ public class LoginActivity extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                loginButton.setEnabled(false);
+                registerButton.setEnabled(false);
+
                 loadingProgressBar.setVisibility(View.VISIBLE);
-                loginViewModel.login(usernameEditText.getText().toString(),
-                        passwordEditText.getText().toString());
+                    loginViewModel.login(usernameEditText.getText().toString(),
+                            passwordEditText.getText().toString());
+
             }
         });
 
@@ -135,7 +150,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void updateUiWithUser(LoggedInUserView model) {
-        String welcome = getString(R.string.welcome) + model.getDisplayName();
+        String welcome = getString(R.string.welcome) + " " + model.getDisplayName();
         // TODO : initiate successful logged in experience
         Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
     }
